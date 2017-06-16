@@ -1,5 +1,3 @@
-import de.heikoseeberger.sbtheader.HeaderKey._
-import de.heikoseeberger.sbtheader.license.Apache2_0
 import sbt.Keys._
 import sbt._
 
