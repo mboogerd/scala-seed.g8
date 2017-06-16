@@ -6,10 +6,8 @@ import sbt._
 object LicenseConf {
 
   lazy val settings = Seq(
-    licenses +=("Apache-2.0", url("http://opensource.org/licenses/apache2.0.php")),
-    headers := Map(
-      "scala" -> Apache2_0("2017", "Merlijn Boogerd"),
-      "conf" -> Apache2_0("2017", "Merlijn Boogerd", "#")
-    )
+    organizationName := "Merlijn Boogerd",
+    startYear := Some(2017),
+    licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt"))
   )
 }
