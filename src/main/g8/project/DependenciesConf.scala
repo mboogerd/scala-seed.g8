@@ -8,7 +8,6 @@ object DependenciesConf {
     scalaVersion := "2.12.2",
     resolvers ++= Seq(
       Resolver.jcenterRepo,
-      Resolver.bintrayRepo("iheartradio", "maven"),
       Resolver.sonatypeRepo("releases")
     )
   )
@@ -18,16 +17,28 @@ object DependenciesConf {
   )
 
   def commonDeps = Seq(
-    "commons-io" % "commons-io" % "$commons_io_version$",
+    // logging
     "ch.qos.logback" % "logback-classic" % "$logback_version$",
-    "com.iheart" %% "ficus" % "$ficus_version$",
+
+    // scala
+    "org.log4s" %% "log4s" % "$log4s_version$",
     "com.github.pathikrit" %% "better-files" % "$better_files_version$",
     "com.beachape" %% "enumeratum" % "$enumeratum_version$",
     "com.github.nscala-time" %% "nscala-time" % "$nscala_time_version$",
-    "org.scalaz" %% "scalaz-core" % "$scalaz_version$",
 
+    // typelevel
+    "com.chuusai" %% "shapeless" % "$shapeless_version$",
+    "com.github.pureconfig" %% "pureconfig" % "$pureconfig_version$",
+    "com.github.pureconfig" %% "pureconfig-enumeratum" % "$pureconfig_version$",
+    "eu.timepit" %% "refined" % "$refined_version$",
+    "eu.timepit" %% "refined-pureconfig" % "$refined_version$",
+    "org.typelevel" %% "cats" % "$cats_version$",
+    "org.typelevel" %% "cats-effect" % "$cats_effect_version$",
+
+    // test
     "org.scalatest" %% "scalatest" % "$scalatest_version$" % Test,
     "org.scalacheck" %% "scalacheck" % "$scalacheck_version$" % Test,
-    "org.typelevel" %% "scalaz-scalatest" % "$scalaz_test_version$" % Test
+    "eu.timepit" %% "refined-scalacheck" % "$refined_version$" % Test,
+    "org.scalamock" %% "scalamock-scalatest-support" % "$scalamock_version$" % Test
   )
 }
