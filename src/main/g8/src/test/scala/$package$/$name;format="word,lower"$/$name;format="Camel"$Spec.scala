@@ -1,4 +1,4 @@
-package $package$
+package $package$.$name;format="word,lower"$
 
 import org.scalatest._
 
