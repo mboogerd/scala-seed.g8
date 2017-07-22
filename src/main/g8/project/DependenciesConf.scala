@@ -16,6 +16,10 @@ object DependenciesConf {
     libraryDependencies ++= commonDeps
   )
 
+  lazy val akka: Seq[Setting[_]] = scala ++ Seq(
+    libraryDependencies ++= akkaDeps
+  )
+
   def commonDeps = Seq(
     // logging
     "ch.qos.logback" % "logback-classic" % "$logback_version$",
@@ -41,4 +45,15 @@ object DependenciesConf {
     "eu.timepit" %% "refined-scalacheck" % "$refined_version$" % Test,
     "org.scalamock" %% "scalamock-scalatest-support" % "$scalamock_version$" % Test
   )
+
+  def akkaDeps = {
+    val akkaVersion = "$akka_version$"
+    Seq(
+      "com.typesafe.akka" %% "akka-actor" % akkaVersion,
+      "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
+      "com.typesafe.akka" %% "akka-remote" % akkaVersion,
+      "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test,
+      "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion % Test
+    )
+  }
 }
