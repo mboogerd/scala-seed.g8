@@ -117,6 +117,8 @@ object DependenciesConf {
     )
   }
 
+  lazy val squants = "org.typelevel"  %% "squants"  % "$squants_version$"
+
   /* === Scala Testing Frameworks === */
   lazy val scalatest = "org.scalatest" %% "scalatest" % "$scalatest_version$" % Test
   lazy val scalacheck = "org.scalacheck" %% "scalacheck" % "$scalacheck_version$" % Test
