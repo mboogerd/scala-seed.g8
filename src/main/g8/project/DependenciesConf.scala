@@ -34,6 +34,7 @@ object DependenciesConf {
 
   /* === Typesafe / Lightbend dependencies === */
   val akkaVersion = "$akka_version$"
+  val akkaHttpVersion = "$akka_http_version$"
 
   lazy val akkaActor: Seq[ModuleID] = Seq(
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
@@ -47,8 +48,8 @@ object DependenciesConf {
   )
 
   lazy val akkaHttp: Seq[ModuleID] = Seq(
-    "com.typesafe.akka" %% "akka-http" % akkaVersion,
-    "com.typesafe.akka" %% "akka-http-testkit" % akkaVersion
+    "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion
   )
 
   lazy val akkaCluster: Seq[ModuleID] = Seq(
